@@ -14,7 +14,7 @@ import org.testng.annotations.AfterTest;
 public class FirstTestNG {
 	 WebDriver driver;
  
-	/* @Test 
+	/*@Test 
 	  public void FirstNG() throws InterruptedException {
 	     driver.findElement(By.id("txtLoginid")).sendKeys("Deepali");
 		 driver.findElement(By.name("txtpassword")).sendKeys("Deep");
@@ -26,9 +26,9 @@ public class FirstTestNG {
 		 Thread.sleep(2000);
 		
 		 
-  }*/
+  }
  
-	/*@Test
+	@Test
 	  public void Second() throws InterruptedException {
 		 driver.findElement(By.id("txtLoginid")).sendKeys("Deepali");
 		 //driver.findElement(By.name("txtpassword")).sendKeys("Deep");
@@ -36,9 +36,9 @@ public class FirstTestNG {
 		 Thread.sleep(2000);
 		 driver.switchTo().alert().accept();
 		 
-	 }*/
+	 }
 	 
-	/* @Test
+	 @Test
 	 public void Third() {
 	 driver.get("https://techcanvass.com/Contact-Techcanvass.aspx");
 	 driver.findElement(By.id("txtName")).sendKeys("Deepali");
@@ -51,7 +51,7 @@ public class FirstTestNG {
 			driver.findElement(By.xpath("//*[@id=\"txtMessage\"]")).sendKeys("Automated test");
 			driver.findElement(By.name("btnSubmit")).click();
 	 }
-	 */
+	 
 	 
 	//actual vs expected results
 	@Test
@@ -79,12 +79,26 @@ public class FirstTestNG {
 		
 		
 	}
+	*/
+	 
+	 //To check if valid login is provided
+	@Test
+	public void MedoplusLogin() throws InterruptedException
+	{
+		driver.get("http://medopsplus.techcanvass.co.in/");
+		Thread.sleep(2000);
+		driver.findElement(By.id("txtUserName")).sendKeys("Deepali");
+		driver.findElement(By.id("txtPassword")).sendKeys("admin");
+		driver.findElement(By.id("LoginButton")).click();
+	}
+	
+	
 	 
 	 @BeforeTest
       public void beforeTest() {
 		 System.setProperty("webdriver.chrome.driver","C:\\Users\\Deepali\\eclipse-workspace\\chromedriver.exe");
 		 driver=new ChromeDriver();
-		 driver.get("http://lms.techcanvass.co.in/");
+		// driver.get("http://lms.techcanvass.co.in/");
   }
 
      @AfterTest
